@@ -635,4 +635,6 @@ button.carousel_button img{
 file was vertical*/
 img#tonyPhoto{
     transform: rotate(90deg);
-}
+    overflow: hidden;
+    margin-left: 10px;
+/* }
