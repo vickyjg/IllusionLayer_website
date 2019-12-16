@@ -1,0 +1,632 @@
+/* Clears default settings http://meyerweb.com/eric/tools/css/reset/ 
+v2.0 | 20110126
+License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+
+
+/*UNIVERSAL STYLES*/
+
+
+@font-face {
+    font-family: 'PxGroteskBold';
+    src: url("fonts/PxGrotesk-Bold.ttf") format("truetype");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'PxGroteskRegular';
+    src: url("fonts/PxGrotesk-Regular.ttf") format("truetype");
+    font-weight: normal; 
+}
+
+@font-face {
+    font-family: 'PxGroteskLight';
+    src: url("fonts/PxGrotesk-Light.ttf") format("truetype");
+    font-weight: lighter;
+}
+
+@font-face {
+    font-family: 'PxGroteskLightItalic';
+    src: url("fonts/PxGrotesk-Light-Italic.ttf") format("truetype");
+    font-weight: lighter;
+    font-style: italic;
+}
+
+
+
+body{
+    background-color: #202020;
+    color: #C9C9C9;
+    font-family: 'PxGroteskRegular', sans-serif;
+    font-size: 1.5em;
+
+    /*    scroll-behavior: smooth;*/
+}
+
+p{
+    font-size: 1em;
+}
+
+/* solution for colored footer to occupy viewport width*/
+section.everythingButFooter{
+    margin: 30px;
+    margin-right: 150px;
+    margin-left: 150px;
+}
+
+/* Headers
+uses flexbox alignment to center links
+
+*/
+header{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    padding: 30px;
+    font-family: 'PxGroteskBold', sans-serif;
+    text-transform: uppercase;
+}
+
+/*header link styles*/
+header>a{
+    margin: 15px;
+    padding: 5px;
+
+}
+
+a.activePage{
+    border-bottom: 2px solid #C9C9C9;
+    color: #C9C9C9 !important;
+}
+
+a:link {
+    text-decoration: none;
+    color: #808080;
+}
+
+
+a:visited {
+    text-decoration: none;
+    color: #808080;
+}
+
+
+a:hover {
+    color: #C9C9C9;
+}
+
+a:active {
+    color: #C9C9C9;
+}
+
+/* Footer styles */
+footer{
+    display: flex;
+    align-content:center;
+    justify-content: flex-start;
+    background-color: #000000;
+    padding: 30px;
+    padding-left: 128px;
+}
+
+div.footer_div{
+    padding: 10px;
+    padding-right: 50px;
+    font-size: 0.7em;
+    line-height: 1.25em;
+    color: #C9C9C9 !important;
+}
+
+div.footer_div>h5{
+    font-family: 'PxGroteskBold';
+    padding-bottom: 10px;
+    
+}
+
+/* HOME/INDEX PAGE 
+selectors are in the order they appear on the page (top to bottom, left to right)
+*/
+
+/*The columns are in fractions and the rows are in pixels. 
+
+The fractions allow the space to be divided evenly horizontally. 
+
+The pixels for the rows are so that images' heights do not affect the height of the grid cell.
+
+Subsequently, the image width is in percentages while the height is in pixels*/
+
+
+
+
+
+div.indexContent{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) ;
+    grid-template-rows: repeat(12, 300px);
+    grid-gap: 16px;
+    font-size: 0.8em;
+    line-height: 1.5em;
+
+
+}
+
+
+div.indexContent > p{
+
+}
+
+
+div.indexContent > img {
+    /*
+    transform-origin: 0;
+    transform: translateZ(3px) scale(0.625);
+    */
+
+}
+
+h1#mainTitle{
+    grid-column:  2 / span 1 ;
+    grid-row: 1 / span 1 ;
+    font-size: 4em;
+    line-height: 1em;
+    text-align: center;
+    font-family: 'PxGroteskBold', sans-serif;
+}
+
+p.mainTitleDetails{
+    grid-column: 1 / span 3;
+    grid-row: 2 / span 1 ;
+    font-size: 1em;
+    text-align: center;
+}
+
+div#imgContainer1{
+    grid-column: 1 / span 1;
+    grid-row: 3 / span 1 ;
+
+
+}
+
+/* Content(images and text) uses the grid and relative positioning (top and left) */
+
+div#imgContainer1>img{
+    width: 120%;
+    height: 300px;
+    object-fit: cover;
+
+
+}
+
+p#p1{
+    grid-column: 3 / span 1;
+    grid-row: 3 / span 1 ;
+    position: relative;
+    top: 80px;
+
+
+}
+
+div#imgContainer2{
+    grid-column: 2 / span 1;
+    grid-row: 4 / span 1 ;
+    position: relative;
+    top: 80px;
+
+
+}
+
+div#imgContainer2>img{
+    width: 150%;
+    height: 120px;
+    object-fit: cover;
+
+}
+
+div#imgContainer3{
+    grid-column: 3 / span 1;
+    grid-row: 5 / span 1 ;
+    position: relative;
+    left: -40px;
+
+}
+
+div#imgContainer3>img{
+    width: 80%;
+    height: 150px;
+    object-fit: cover;
+
+
+}
+
+
+p#p2{
+    grid-column: 1 / span 1;
+    grid-row: 6 / span 1 ;
+    position: relative;
+    top: -150px;
+
+}
+
+div#imgContainer4{
+    grid-column: 2 / span 2;
+    grid-row: 6 / span 1 ;
+
+}
+
+div#imgContainer4>img{
+    width: 95%;
+    height: 400px;
+    object-fit: cover;
+}
+
+h3 {
+    grid-column: 1 / span 1;
+    grid-row: 7 / span 1 ;
+    position: relative;
+    top: 200px;
+    left: 100px;
+    font-family: 'PxGroteskBold';
+}
+
+p#p3{
+    grid-column: 1 / span 1;
+    grid-row: 8 / span 1 ;
+
+}
+
+div#imgContainer5{
+    grid-column: 2 / span 1;
+    grid-row: 8 / span 1 ;
+    position: relative;
+    top: -50px;
+    left: 100px;
+
+
+}
+
+div#imgContainer5>img{
+    width: 120%;
+    height: 250px;
+    object-fit: cover;
+}
+
+div#imgContainer6{
+    grid-column: 1 / span 1;
+    grid-row: 9 / span 1 ;
+    position: relative;
+    left: 100px;
+
+}
+
+div#imgContainer6>img{
+    width: 150%;
+    height: 320px;
+    object-fit: cover;
+}
+
+
+p#p4{
+    grid-column: 3 / span 1;
+    grid-row: 9 / span 1 ;
+    position: relative;
+    top: 50px;
+
+}
+
+p#p5{
+    grid-row: 10 / span 1 ;
+    position: relative;
+    top: 150px;
+    left: 100px;
+
+}
+
+div#imgContainer7{
+    grid-column: 3 / span 1;
+    grid-row: 10 / span 1 ;
+    position: relative;
+    top: 150px;
+    left: -170px;
+
+
+}
+
+div#imgContainer7>img{
+    width: 120%;
+    height: 200px;
+    object-fit: cover;
+}
+
+div#imgContainer8{
+    grid-column: 1 / span 2;
+    grid-row: 11 / span 1 ;
+    position: relative;
+    top: 150px;
+    left: -100px;
+
+}
+
+div#imgContainer8>img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+
+p#p6{
+    grid-column: 3 / span 1;
+    grid-row: 11 / span 1 ;
+    position: relative;
+    top: 220px;
+    left: -30px;
+
+}
+
+p#p7{
+    grid-column: 2 / span 1;
+    grid-row: 12 / span 1 ;
+    position: relative;
+    top: 175px;
+
+}
+
+
+/* AR ART PAGE
+all page content in div with class "arArtContent"
+
+Content has a 3 column grid with left and right margins to center it
+
+
+
+*/
+
+div.arArtContent{
+    margin-left: 64px;
+    margin-right: 64px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 16px;
+
+}
+
+h2.arSectionTitle{
+    grid-column: 1 / span 2;
+    margin-top: 72px;
+    font-family: "PxGroteskBold" ;
+    font-size: 1.25em;
+
+}
+
+
+p.arParagraph, blockquote, img#arInstructions, div#posters {
+    grid-column: 2 / span 2;
+    line-height: 1.25em;
+}
+
+p.quoteCredit{
+    padding: 12px;
+    text-align: right;
+
+}
+
+img#arInstructions{
+    height: 800px;
+}
+
+img.letterpressPoster{
+    height: 350px;
+    margin-top: 32px;
+    margin-right: 32px;
+}
+
+
+
+
+/* ARTIST PROFILES
+2 main parts on this page: description on top and the individual artist slides
+
+*/
+
+/* Section 1: Artist Profile Description */
+
+
+section#artistProfileDescription{
+    margin: 64px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 16px;
+
+}
+
+h2.artistTitle{
+    grid-column: 1  / span 2;
+    grid-row: 1  / span 1;
+    font-family: 'PxGroteskBold';
+    font-size: 1em;
+    line-height: 1.5em;
+    padding-right: 20px;
+}
+
+ul.artistsList{
+    grid-column: 2  / span 1;
+    grid-row: 2  / span 1;
+    font-family: 'PxGroteskBold';
+    line-height: 1.5em;
+}
+
+section#artistProfileDescription > p{
+    grid-column: 3  / span 1;
+    font-size: 0.75em;
+    line-height: 1.5em;
+}
+
+/* Section 2: Slideshow w/ Individual Artists 
+based on Kevin Powell's tutorial: https://www.youtube.com/watch?v=VYsVOamdB0g
+
+*/
+
+.carousel{
+    position: relative;
+height: 500px;
+    margin: 0 auto;
+    margin-bottom: 32px;
+}
+
+div.carousel_track-container{
+     position: relative;
+    height: 100%;
+    overflow: hidden;
+    margin: 32px;
+}
+
+ul.carousel_track{
+    position: relative;
+    list-style: none;
+    height: 100%;
+    transition: transform 1s ease-in;
+}
+
+/* Nested grid in slide to format text 
+and images for each artist*/
+
+li.carousel_slide{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 300px;
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 32px;
+/*    margin-right: 32px;*/
+    
+}
+
+
+li.carousel_slide > img{
+    
+   width: 100%;
+    height: 400px;
+   object-fit: cover;
+    
+    grid-column: 1 / span 1;
+    
+}
+
+/*
+
+li.carousel_slide > caption {
+    grid-column: 1 / span 1;
+    font-family: 'PxGroteskLight', sans-serif;
+    font-size: 0.2em;
+    line-height: 0.5em;
+}
+*/
+
+p.artistStatement{
+    grid-column: 2 / span 1;
+    font-size: 0.75em;
+    line-height: 1.5em;
+    padding-right: 32px;
+    
+}
+
+p.artistBio{
+    grid-column: 2 / span 1;
+    font-size: 0.75em;
+    line-height: 1em;
+    
+}
+
+button.carousel_button{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border:0;
+    cursor: pointer;
+}
+
+button.carousel_button-left{
+    left: -70px;
+}
+
+button.carousel_button-right{
+    right: -70px;
+}
+
+
+button.carousel_button img{
+    width: 50px;
+}
+
+.carousel_nav{
+    display: flex;
+    justify-content: center;
+   
+    
+}
+
+
+.carousel_indicator{
+    border: 0;
+    width: 20px;
+    height: 10px;
+    margin: 5px;
+    background-color: #7A7A7A;
+
+    
+}
+
+.carousel_indicator.current-slide{
+    background-color: #C9C9C9;
+    
+}
