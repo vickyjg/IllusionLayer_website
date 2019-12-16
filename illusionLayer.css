@@ -1,4 +1,4 @@
-/* Clears default settings http://meyerweb.com/eric/tools/css/reset/ 
+/* Clears default settings http://meyerweb.com/eric/tools/css/reset/
 v2.0 | 20110126
 License: none (public domain)
 */
@@ -12,8 +12,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
     margin: 0;
@@ -24,7 +24,7 @@ time, mark, audio, video {
     vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
     display: block;
 }
@@ -62,7 +62,7 @@ table {
 @font-face {
     font-family: 'PxGroteskRegular';
     src: url("fonts/PxGrotesk-Regular.ttf") format("truetype");
-    font-weight: normal; 
+    font-weight: normal;
 }
 
 @font-face {
@@ -166,16 +166,16 @@ div.footer_div{
 div.footer_div>h5{
     font-family: 'PxGroteskBold';
     padding-bottom: 10px;
-    
+
 }
 
-/* HOME/INDEX PAGE 
+/* HOME/INDEX PAGE
 selectors are in the order they appear on the page (top to bottom, left to right)
 */
 
-/*The columns are in fractions and the rows are in pixels. 
+/*The columns are in fractions and the rows are in pixels.
 
-The fractions allow the space to be divided evenly horizontally. 
+The fractions allow the space to be divided evenly horizontally.
 
 The pixels for the rows are so that images' heights do not affect the height of the grid cell.
 
@@ -507,7 +507,7 @@ section#artistProfileDescription > p{
     line-height: 1.5em;
 }
 
-/* Section 2: Slideshow w/ Individual Artists 
+/* Section 2: Slideshow w/ Individual Artists
 based on Kevin Powell's tutorial: https://www.youtube.com/watch?v=VYsVOamdB0g
 
 */
@@ -533,7 +533,7 @@ ul.carousel_track{
     transition: transform 1s ease-in;
 }
 
-/* Nested grid in slide to format text 
+/* Nested grid in slide to format text
 and images for each artist*/
 
 li.carousel_slide{
@@ -542,23 +542,23 @@ li.carousel_slide{
     bottom: 0;
     width: 100%;
     height: 300px;
-    
+
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 32px;
 /*    margin-right: 32px;*/
-    
+
 }
 
 
 li.carousel_slide > img{
-    
+
    width: 100%;
     height: 400px;
    object-fit: cover;
-    
+
     grid-column: 1 / span 1;
-    
+
 }
 
 /*
@@ -576,14 +576,14 @@ p.artistStatement{
     font-size: 0.75em;
     line-height: 1.5em;
     padding-right: 32px;
-    
+
 }
 
 p.artistBio{
     grid-column: 2 / span 1;
     font-size: 0.75em;
     line-height: 1em;
-    
+
 }
 
 button.carousel_button{
@@ -611,8 +611,8 @@ button.carousel_button img{
 .carousel_nav{
     display: flex;
     justify-content: center;
-   
-    
+
+
 }
 
 
@@ -623,10 +623,16 @@ button.carousel_button img{
     margin: 5px;
     background-color: #7A7A7A;
 
-    
+
 }
 
 .carousel_indicator.current-slide{
     background-color: #C9C9C9;
-    
+
+}
+
+/* For some reason, Tony's photo was rotated even though the original image
+file was vertical*/
+img#tonyPhoto{
+    transform: rotate(90deg);
 }
