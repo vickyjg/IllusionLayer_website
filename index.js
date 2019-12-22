@@ -1,3 +1,26 @@
+/* Back to Top 
+from Matthew Cain on Codepen
+https://codepen.io/matthewcain/pen/ZepbeR
+*/
+
+var btn = $('#button');
+
+$(window).scroll(function() {
+  if ($(window).scrollTop() > 300) {
+    btn.addClass('show');
+  } else {
+    btn.removeClass('show');
+  }
+});
+
+btn.on('click', function(e) {
+  e.preventDefault();
+  $('html, body').animate({scrollTop:0}, '300');
+});
+
+/* end of Back to Top script */
+
+
 /* Carousel slide based on Kevin Powell's tutorial: https://www.youtube.com/watch?v=VYsVOamdB0g */
 
 const track = document.querySelector('.carousel_track');

@@ -81,10 +81,12 @@ table {
 
 
 body{
+    max-width: 1440px;
     background-color: #202020;
     color: #C9C9C9;
     font-family: 'PxGroteskRegular', sans-serif;
     font-size: 1.5em;
+
 
     /*    scroll-behavior: smooth;*/
 }
@@ -144,6 +146,61 @@ a:hover {
 a:active {
     color: #C9C9C9;
 }
+
+/* Back to Top 
+from Matthew Cain on Codepen
+https://codepen.io/matthewcain/pen/ZepbeR
+*/
+
+#button {
+    display: inline-block;
+    background-color: #808080;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    transition: background-color .3s, 
+        opacity .5s, visibility .5s;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+}
+
+#button > img{
+    width: 40px;
+    height: 40px;
+}
+
+#button > p {
+    font-size: 0.5em;
+    line-height: 50px;
+    letter-spacing: 0.05em;
+    color: #202020;
+    position: relative;
+    top: -30px;
+}
+/*
+#button::after {  
+
+}
+*/
+
+#button:hover {
+    cursor: pointer;
+    background-color: #C9C9C9;
+}
+#button:active {
+    background-color: #C9C9C9;
+}
+#button.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* end of back to top button styles*/
+
 
 /* Footer styles */
 footer{
@@ -449,7 +506,8 @@ p.arParagraph, blockquote, img#arInstructions, div#posters {
     line-height: 1.25em;
 }
 
-p.quoteCredit{
+p.quoteCredit, i, span {
+    font-family: 'PxGroteskLightItalic', sans-serif;
     padding: 12px;
     text-align: right;
 
@@ -458,6 +516,20 @@ p.quoteCredit{
 img#arInstructions{
     height: 800px;
 }
+
+
+div#posters{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+figcaption{
+    font-family: 'PxGroteskLight', sans-serif;
+    font-size: 0.5em;
+}
+
+
+
 
 img.letterpressPoster{
     height: 350px;
@@ -514,13 +586,13 @@ based on Kevin Powell's tutorial: https://www.youtube.com/watch?v=VYsVOamdB0g
 
 .carousel{
     position: relative;
-height: 500px;
+    height: 500px;
     margin: 0 auto;
     margin-bottom: 32px;
 }
 
 div.carousel_track-container{
-     position: relative;
+    position: relative;
     height: 100%;
     overflow: hidden;
     margin: 32px;
@@ -546,16 +618,16 @@ li.carousel_slide{
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 32px;
-/*    margin-right: 32px;*/
+    /*    margin-right: 32px;*/
 
 }
 
 
 li.carousel_slide > img{
 
-   width: 100%;
+    width: 100%;
     height: 400px;
-   object-fit: cover;
+    object-fit: cover;
 
     grid-column: 1 / span 1;
 
@@ -564,10 +636,10 @@ li.carousel_slide > img{
 /*
 
 li.carousel_slide > caption {
-    grid-column: 1 / span 1;
-    font-family: 'PxGroteskLight', sans-serif;
-    font-size: 0.2em;
-    line-height: 0.5em;
+grid-column: 1 / span 1;
+font-family: 'PxGroteskLight', sans-serif;
+font-size: 0.2em;
+line-height: 0.5em;
 }
 */
 
@@ -637,4 +709,6 @@ img#tonyPhoto{
     transform: rotate(90deg);
     overflow: hidden;
     margin-left: 10px;
-/* }
+    margin-right: 10px;
+
+    /* }
