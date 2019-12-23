@@ -147,6 +147,8 @@ a:active {
     color: #C9C9C9;
 }
 
+
+
 /* Back to Top 
 from Matthew Cain on Codepen
 https://codepen.io/matthewcain/pen/ZepbeR
@@ -217,7 +219,7 @@ div.footer_div{
     padding-right: 50px;
     font-size: 0.7em;
     line-height: 1.25em;
-    color: #C9C9C9 !important;
+    color: #808080 !important;
 }
 
 div.footer_div>h5{
@@ -579,16 +581,25 @@ section#artistProfileDescription > p{
     line-height: 1.5em;
 }
 
+
 /* Section 2: Slideshow w/ Individual Artists
 based on Kevin Powell's tutorial: https://www.youtube.com/watch?v=VYsVOamdB0g
 
 */
 
+p.artistBio{
+    font-family: 'PxGroteskLight', sans-serif;
+    font-size: 0.6em !important;
+    line-height: 1.5em !important;
+    
+}
+
 .carousel{
     position: relative;
     height: 500px;
     margin: 0 auto;
-    margin-bottom: 32px;
+    margin-top: 100px;
+    margin-bottom: 100px;
 }
 
 div.carousel_track-container{
@@ -698,7 +709,7 @@ button.carousel_button img{
 
 }
 
-.carousel_indicator.current-slide{
+.carousel_indicator.currentSlide{
     background-color: #C9C9C9;
 
 }
